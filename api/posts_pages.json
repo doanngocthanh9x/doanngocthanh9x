@@ -1,0 +1,5 @@
+---
+layout: api_pages
+page_size: 10
+permalink: /api/posts/pages.json
+---

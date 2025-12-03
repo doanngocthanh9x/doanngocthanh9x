@@ -1,0 +1,24 @@
+<div class="featured-list row">
+  {% assign featured_posts = site.posts | where_exp: "p", "p.featured == true" %}
+  {% if featured_posts.size == 0 %}
+    <p data-i18n="featured.title">Featured Posts</p>
+    <p>No featured posts yet.</p>
+  {% else %}
+    {% for p in featured_posts %}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          {% if p.image %}
+            <img src="{{ p.image | relative_url }}" class="card-img-top" alt="{{ p.title }}">
+          {% else %}
+            <img src="{{ '/assets/img/post-landscape-1.jpg' | relative_url }}" class="card-img-top" alt="{{ p.title }}">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h5>
+            <p class="card-text">{{ p.excerpt | strip_html | truncate: 120 }}</p>
+            <a href="{{ p.url | relative_url }}" class="btn btn-sm btn-primary" data-i18n="featured.read_more">Read more</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>

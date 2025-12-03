@@ -1,0 +1,5 @@
+---
+layout: api
+limit: 5
+permalink: /api/latest.json
+---

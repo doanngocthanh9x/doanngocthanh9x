@@ -1,0 +1,17 @@
+<div class="author-card d-flex align-items-start">
+  <div class="author-img me-3">
+    {% if page.author_image %}
+      <img src="{{ page.author_image | relative_url }}" alt="{{ page.author_name }}" class="img-fluid rounded-circle">
+    {% else %}
+      <img src="{{ '/assets/img/person-1.jpg' | relative_url }}" alt="{{ page.author_name }}" class="img-fluid rounded-circle">
+    {% endif %}
+  </div>
+  <div class="author-body">
+    <h2 data-i18n="author.title">About the Author</h2>
+    <h3 class="mt-1">{{ page.author_name }}</h3>
+    <p>{{ page.author_bio }}</p>
+    {% if page.author_email %}
+      <p><strong data-i18n="author.contact">Contact</strong>: <a href="mailto:{{ page.author_email }}">{{ page.author_email }}</a></p>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,35 @@
+{
+  "total_posts": {% assign all_posts = site.posts | sort: 'date' | reverse %}{{ all_posts | size }},
+  "page_size": {{ page.page_size | default: 10 }},
+  {% comment %} compute total_pages = ceil(total / page_size) {% endcomment %}
+  {% assign total = all_posts | size %}
+  {% assign page_size = page.page_size | default: 10 %}
+  {% assign total_pages = total | divided_by: page_size %}
+  {% assign rem = total | modulo: page_size %}
+  {% if rem > 0 %}{% assign total_pages = total_pages | plus: 1 %}{% endif %}
+  "total_pages": {{ total_pages }},
+  "pages": [
+  {% for i in (1..total_pages) %}
+    {% assign start = i | minus: 1 | times: page_size %}
+    {% assign slice_posts = all_posts | slice: start, page_size %}
+    {
+      "page": {{ i }},
+      "posts": [
+      {% for post in slice_posts %}
+        {
+          "title": {{ post.title | jsonify }},
+          "url": {{ post.url | absolute_url | jsonify }},
+          "date": {{ post.date | date_to_xmlschema | jsonify }},
+          "excerpt": {{ post.excerpt | strip_html | strip_newlines | jsonify }},
+          "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+          "image": {{ post.image | default: "" | jsonify }},
+          "thumbnail": {{ post.thumbnail | default: post.image | default: "" | jsonify }},
+          "categories": {{ post.categories | jsonify }},
+          "tags": {{ post.tags | jsonify }}
+        }{% if forloop.last == false %},{% endif %}
+      {% endfor %}
+      ]
+    }{% if forloop.last == false %},{% endif %}
+  {% endfor %}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "tags": {
+  {% for tag_pair in site.tags %}
+    {% assign tag_name = tag_pair[0] %}
+    {% assign tag_posts = tag_pair[1] | sort: 'date' | reverse %}
+    "{{ tag_name }}": [
+      {% for post in tag_posts %}
+        {
+          "title": {{ post.title | jsonify }},
+          "url": {{ post.url | absolute_url | jsonify }},
+          "date": {{ post.date | date_to_xmlschema | jsonify }},
+          "excerpt": {{ post.excerpt | strip_html | strip_newlines | jsonify }},
+          "image": {{ post.image | default: "" | jsonify }},
+          "thumbnail": {{ post.thumbnail | default: post.image | default: "" | jsonify }},
+          "categories": {{ post.categories | jsonify }},
+          "tags": {{ post.tags | jsonify }}
+        }{% if forloop.last == false %},{% endif %}
+      {% endfor %}
+    ]{% if forloop.last == false %},{% endif %}
+  {% endfor %}
+  }
+}

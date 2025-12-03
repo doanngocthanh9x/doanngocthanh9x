@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="vi">
+  <!DOCTYPE html>
+  <html lang="vi">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+
+    <!-- Favicons -->
+    <link href="{{ '/assets/img/favicon.png' | relative_url }}" rel="icon">
+    <link href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{ '/assets/vendor/bootstrap/css/bootstrap.min.css' | relative_url }}" rel="stylesheet">
+    <link href="{{ '/assets/vendor/bootstrap-icons/bootstrap-icons.css' | relative_url }}" rel="stylesheet">
+    <link href="{{ '/assets/vendor/aos/aos.css' | relative_url }}" rel="stylesheet">
+    <link href="{{ '/assets/vendor/swiper/swiper-bundle.min.css' | relative_url }}" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="{{ '/assets/css/main.css' | relative_url }}" rel="stylesheet">
+
+  </head>
+
+  <body class="index-page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+
+        <a href="{{ '/' | relative_url }}" class="logo d-flex align-items-center me-auto me-xl-0">
+          <h1 class="sitename">{{ site.title }}</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="{{ '/' | relative_url }}" class="active" data-i18n="nav.home">Home</a></li>
+            <li><a href="{{ '/about.html' | relative_url }}" data-i18n="nav.about">About</a></li>
+            <li><a href="{{ '/author.html' | relative_url }}" data-i18n="nav.author">Author</a></li>
+            <li><a href="{{ '/featured.html' | relative_url }}" data-i18n="nav.featured">Featured</a></li>
+            <li><a href="{{ '/search.html' | relative_url }}" data-i18n="nav.search">Search</a></li>
+            <li><a href="{{ '/api/posts.json' | relative_url }}" data-i18n="nav.api">API JSON</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <div class="header-social-links d-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          <!-- Language selector -->
+          <div class="ms-3 lang-switch">
+            <a href="#" class="btn btn-sm btn-link" data-lang-select data-lang="vi">VI</a>
+            <a href="#" class="btn btn-sm btn-link" data-lang-select data-lang="en">EN</a>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <main class="main container">
+      {{ content }}
+    </main>
+
+    <footer id="footer" class="footer dark-background mt-5">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="{{ '/' | relative_url }}" class="logo d-flex align-items-center">
+              <span class="sitename">{{ site.title }}</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>A108 Adam Street</p>
+              <p>New York, NY 535022</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+              <p><strong>Email:</strong> <span>{{ site.email }}</span></p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4 data-i18n="footer.useful">Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4 data-i18n="footer.services">Our Services</h4>
+            <ul>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Product Management</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4 data-i18n="footer.extra">Hic solutasetp</h4>
+            <ul>
+              <li><a href="#">Molestiae accusamus iure</a></li>
+              <li><a href="#">Excepturi dignissimos</a></li>
+              <li><a href="#">Suscipit distinctio</a></li>
+              <li><a href="#">Dilecta</a></li>
+              <li><a href="#">Sit quas consectetur</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4 data-i18n="footer.contact">Nobis illum</h4>
+            <ul>
+              <li><a href="#">Ipsam</a></li>
+              <li><a href="#">Laudantium dolorum</a></li>
+              <li><a href="#">Dinera</a></li>
+              <li><a href="#">Trodelas</a></li>
+              <li><a href="#">Flexo</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+  <p>© <span data-i18n="footer.copyright">Copyright</span> <strong class="px-1 sitename">{{ site.title }}</strong> <span data-i18n="footer.all_rights">All Rights Reserved</span></p>
+        <div class="credits">
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by  <a href="https://themewagon.com">ThemeWagon</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/vendor/php-email-form/validate.js' | relative_url }}"></script>
+    <script src="{{ '/assets/vendor/aos/aos.js' | relative_url }}"></script>
+    <script src="{{ '/assets/vendor/swiper/swiper-bundle.min.js' | relative_url }}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/i18n.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+
+  </body>
+
+  </html>

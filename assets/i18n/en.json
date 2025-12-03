@@ -1,0 +1,38 @@
+{
+ 
+  "author": {
+    "title": "About the Author",
+    "name": "Name",
+    "bio": "Short bio goes here.",
+    "contact": "Contact"
+  },
+  "featured": {
+    "title": "Featured Posts",
+    "read_more": "Read more"
+  },
+  "site": {
+    "title": "Doan Ngoc Thanh Blog",
+    "description": "A simple Jekyll blog with JSON API"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "api": "API JSON",
+    "post": "Post"
+  },
+  "home": {
+    "posts": "Posts",
+    "trending": "Trending",
+    "no_posts": "No posts yet",
+    "recent": "Recent Posts"
+  },
+  "footer": {
+    "useful": "Useful Links",
+    "services": "Our Services",
+    "extra": "More",
+    "contact": "Contact",
+    "copyright": "Copyright",
+    "all_rights": "All Rights Reserved",
+    "designed": "Designed by BootstrapMade"
+  }
+}

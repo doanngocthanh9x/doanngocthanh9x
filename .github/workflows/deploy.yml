@@ -1,0 +1,36 @@
+name: Build and deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          # Use a modern Ruby supported by Jekyll
+          ruby-version: '3.2'
+
+      - name: Install Jekyll
+        run: |
+          gem install bundler jekyll
+
+      - name: Build site with Jekyll
+        run: |
+          jekyll build --destination _site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          #github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          # keep empty if you want to use default gh-pages branch
+          # optionally set publish_branch: gh-pages

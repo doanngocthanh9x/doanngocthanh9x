@@ -1,0 +1,14 @@
+title: Đoàn Ngọc Thành
+email: dnt.doanngocthanh@gmail.com
+description: >
+  Hello world! Đây là blog cá nhân của tôi.
+baseurl: "" # nếu dùng GitHub Pages dưới user.github.io thì để trống
+url: "http://localhost:4000"
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+
+# Excerpt separator
+excerpt_separator: "<!--more-->"
+
+# Build settings
+collections: {}
