@@ -45,6 +45,7 @@
             <li><a href="{{ '/author.html' | relative_url }}" data-i18n="nav.author">Author</a></li>
             <li><a href="{{ '/featured.html' | relative_url }}" data-i18n="nav.featured">Featured</a></li>
             <li><a href="{{ '/search.html' | relative_url }}" data-i18n="nav.search">Search</a></li>
+            <li><a href="{{ '/admin.html' | relative_url }}" data-i18n="nav.admin">Admin</a></li>
             <li><a href="{{ '/api/posts.json' | relative_url }}" data-i18n="nav.api">API JSON</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -151,7 +152,10 @@
     <!-- Preloader -->
     <div id="preloader"></div>
 
-    <!-- Vendor JS Files -->
+  <!-- expose baseurl to client JS for assets and i18n -->
+  <script>window.SITE_BASEURL = "{{ site.baseurl | default: '' }}";</script>
+
+  <!-- Vendor JS Files -->
     <script src="{{ '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' | relative_url }}"></script>
     <script src="{{ '/assets/vendor/php-email-form/validate.js' | relative_url }}"></script>
     <script src="{{ '/assets/vendor/aos/aos.js' | relative_url }}"></script>

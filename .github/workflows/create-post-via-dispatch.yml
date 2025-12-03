@@ -1,0 +1,76 @@
+name: Create post via repository_dispatch
+
+on:
+  repository_dispatch:
+    types: [create-post]
+
+jobs:
+  create-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Ensure directories
+        run: |
+          mkdir -p _posts assets/img
+
+      - name: Save uploaded image (if provided)
+        shell: bash
+        run: |
+          IMAGE_B64="${{ github.event.client_payload.image_base64 || '' }}"
+          IMAGE_NAME="${{ github.event.client_payload.image_filename || '' }}"
+          if [ -n "$IMAGE_B64" ] && [ -n "$IMAGE_NAME" ]; then
+            printf '%s' "$IMAGE_B64" | base64 --decode > "assets/img/$IMAGE_NAME"
+            echo "Saved image as assets/img/$IMAGE_NAME"
+          else
+            echo "No image provided or filename missing"
+          fi
+
+      - name: Create post markdown
+        shell: bash
+        run: |
+          TITLE="${{ github.event.client_payload.title || 'Untitled Post' }}"
+          CONTENT="${{ github.event.client_payload.content || '' }}"
+          TAGS="${{ github.event.client_payload.tags || '' }}"
+          CATEGORIES="${{ github.event.client_payload.categories || 'blog' }}"
+          IMAGE_NAME="${{ github.event.client_payload.image_filename || '' }}"
+
+          # generate slug
+          SLUG=$(echo "$TITLE" | iconv -t ascii//TRANSLIT//IGNORE | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/^-\|-$//g')
+          DATE=$(date -u +"%Y-%m-%d %H:%M:%S %z")
+          FNAME_DATE=$(date -u +"%Y-%m-%d")
+          FPATH="_posts/${FNAME_DATE}-${SLUG}.md"
+
+          echo "Creating post $FPATH"
+
+          # build front matter
+          cat > "$FPATH" <<EOF
+---
+title: "${TITLE//"/\"}"
+date: ${DATE}
+layout: post
+categories: ${CATEGORIES}
+tags: [${TAGS}]
+$(if [ -n "$IMAGE_NAME" ]; then echo "image: /assets/img/$IMAGE_NAME"; fi)
+---
+
+${CONTENT}
+
+EOF
+
+          git add "$FPATH"
+          if [ -n "$IMAGE_NAME" ] && [ -f "assets/img/$IMAGE_NAME" ]; then
+            git add "assets/img/$IMAGE_NAME"
+          fi
+
+          git commit -m "Add post: $TITLE" || echo "No changes to commit"
+          git push origin HEAD:main

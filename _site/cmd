@@ -1,7 +1,0 @@
-jekyll -v
-
-jekyll build --destination _site_test
-
-
-
-jekyll serve --livereload

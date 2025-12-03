@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="vi">
+  <!DOCTYPE html>
+  <html lang="vi">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Admin - Write a post</title>
+    <meta name="description" content="Hello world! Đây là blog cá nhân của tôi.
+">
+
+    <!-- Favicons -->
+    <link href="/doanngocthanh9x/assets/img/favicon.png" rel="icon">
+    <link href="/doanngocthanh9x/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/doanngocthanh9x/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/doanngocthanh9x/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/doanngocthanh9x/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/doanngocthanh9x/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="/doanngocthanh9x/assets/css/main.css" rel="stylesheet">
+
+  </head>
+
+  <body class="index-page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+
+        <a href="/doanngocthanh9x/" class="logo d-flex align-items-center me-auto me-xl-0">
+          <h1 class="sitename">Đoàn Ngọc Thành</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="/doanngocthanh9x/" class="active" data-i18n="nav.home">Home</a></li>
+            <li><a href="/doanngocthanh9x/about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="/doanngocthanh9x/author.html" data-i18n="nav.author">Author</a></li>
+            <li><a href="/doanngocthanh9x/featured.html" data-i18n="nav.featured">Featured</a></li>
+            <li><a href="/doanngocthanh9x/search.html" data-i18n="nav.search">Search</a></li>
+            <li><a href="/doanngocthanh9x/admin.html" data-i18n="nav.admin">Admin</a></li>
+            <li><a href="/doanngocthanh9x/api/posts.json" data-i18n="nav.api">API JSON</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <div class="header-social-links d-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          <!-- Language selector -->
+          <div class="ms-3 lang-switch">
+            <a href="#" class="btn btn-sm btn-link" data-lang-select data-lang="vi">VI</a>
+            <a href="#" class="btn btn-sm btn-link" data-lang-select data-lang="en">EN</a>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <main class="main container">
+      <h1>Admin — Create a new post</h1>
+<p>This page lets you create a post and optionally upload an image directly to the repository using GitHub's repository_dispatch API.
+Only use this as the repository owner or a trusted maintainer. You will need a Personal Access Token (PAT) with <code>repo</code> scope.</p>
+
+<form id="admin-form">
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+    <input id="title" class="form-control" required="" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Tags (comma separated)</label>
+    <input id="tags" class="form-control" placeholder="tag1,tag2" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Categories (comma separated)</label>
+    <input id="categories" class="form-control" placeholder="blog" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Image (optional)</label>
+    <input id="image" type="file" accept="image/*" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Content (Markdown)</label>
+    <textarea id="content" class="form-control" rows="12"></textarea>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Your GitHub Personal Access Token (PAT)</label>
+    <input id="pat" type="password" class="form-control" placeholder="Paste PAT (repo scope) here for one-time use" />
+  </div>
+  <button id="submit" class="btn btn-primary">Create Post</button>
+</form>
+
+<div id="result" class="mt-3"></div>
+
+<script src="/doanngocthanh9x/assets/js/admin.js"></script>
+
+
+    </main>
+
+    <footer id="footer" class="footer dark-background mt-5">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="/doanngocthanh9x/" class="logo d-flex align-items-center">
+              <span class="sitename">Đoàn Ngọc Thành</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>A108 Adam Street</p>
+              <p>New York, NY 535022</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+              <p><strong>Email:</strong> <span>dnt.doanngocthanh@gmail.com</span></p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4 data-i18n="footer.useful">Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4 data-i18n="footer.services">Our Services</h4>
+            <ul>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Product Management</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4 data-i18n="footer.extra">Hic solutasetp</h4>
+            <ul>
+              <li><a href="#">Molestiae accusamus iure</a></li>
+              <li><a href="#">Excepturi dignissimos</a></li>
+              <li><a href="#">Suscipit distinctio</a></li>
+              <li><a href="#">Dilecta</a></li>
+              <li><a href="#">Sit quas consectetur</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4 data-i18n="footer.contact">Nobis illum</h4>
+            <ul>
+              <li><a href="#">Ipsam</a></li>
+              <li><a href="#">Laudantium dolorum</a></li>
+              <li><a href="#">Dinera</a></li>
+              <li><a href="#">Trodelas</a></li>
+              <li><a href="#">Flexo</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+  <p>© <span data-i18n="footer.copyright">Copyright</span> <strong class="px-1 sitename">Đoàn Ngọc Thành</strong> <span data-i18n="footer.all_rights">All Rights Reserved</span></p>
+        <div class="credits">
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by  <a href="https://themewagon.com">ThemeWagon</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+  <!-- expose baseurl to client JS for assets and i18n -->
+  <script>window.SITE_BASEURL = "/doanngocthanh9x";</script>
+
+  <!-- Vendor JS Files -->
+    <script src="/doanngocthanh9x/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/doanngocthanh9x/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/doanngocthanh9x/assets/vendor/aos/aos.js"></script>
+    <script src="/doanngocthanh9x/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/doanngocthanh9x/assets/js/main.js"></script>
+  <script src="/doanngocthanh9x/assets/js/i18n.js"></script>
+  <script src="/doanngocthanh9x/assets/js/search.js"></script>
+
+  </body>
+
+  </html>

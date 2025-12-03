@@ -1,0 +1,32 @@
+{
+  "posts": [
+  
+  
+
+  
+    {
+      "title": "Bài thử chèn ảnh",
+      "url": "https://doanngocthanh9x.github.io/doanngocthanh9x/blog/2025/12/03/bai-co-anh/",
+      "date": "2025-12-03T03:00:00+00:00",
+      "excerpt": "Đây là bài viết thử để kiểm tra việc chèn ảnh trong bài.",
+      "content": "Đây là bài viết thử để kiểm tra việc chèn ảnh trong bài.Phần nội dung tiếp theo để kiểm tra hiển thị của layout và ảnh.Ảnh ở đầu bài sẽ hiển thị vì chúng ta đã thêm image trong front matter.Bạn cũng có thể chèn ảnh trực tiếp trong nội dung:",
+      "image": "/assets/img/post-landscape-3.jpg",
+      "thumbnail": "/assets/img/post-landscape-3.jpg",
+      "categories": ["blog"],
+      "tags": ["ảnh","ví-dụ"]
+    },
+  
+    {
+      "title": "Blogs này được tạo hoàn toàn miễn phí và tốn công",
+      "url": "https://doanngocthanh9x.github.io/doanngocthanh9x/blog/2025/12/02/bai-viet-dau-tien/",
+      "date": "2025-12-02T05:00:00+00:00",
+      "excerpt": "Bài viết đầu tiên — Chào mừng đến với blog!",
+      "content": "Bài viết đầu tiên — Chào mừng đến với blog!Giới thiệujekyllrbMình dùng thư viện này để render giao diện nè https://jekyllrb.com/ dễ triển khai.  Tích hợp với git, tiện cho việc quản lý lịch sử và CI/CD đơn giản.  Hỗ trợ custom domain, HTTPS.Cách mình dùng  Tạo repository (có thể đặt tên là username.github.io hoặc dùng branch gh-pages).  Viết bài ở thư mục _posts/ theo định dạng Jekyll.  Đặt ảnh, CSS, JS vào thư mục assets/ và tham chiếu bằng đường dẫn tương đối (/assets/…).  Push lên GitHub — GitHub Pages sẽ build và phục vụ site tự động.Jekyll — render site tĩnhMình dùng Jekyll để render giao diện: https://jekyllrb.com/Cài nhanh trên Ubuntu:sudo apt updatesudo aptgem install jekyll bundlerKhởi tạo site mới:jekyll new myblogcd myblogbundle exec jekyll serveMẹo nhỏ  Dùng _config.yml để cấu hình baseurl, title, author.  Đặt đoạn ngắn (excerpt) trước &lt;!--more--&gt; để hiển thị tóm tắt.  Tối ưu ảnh (nén) để tải nhanh.  Kiểm tra local bằng bundle exec jekyll serve trước khi push.Các lệnh  jekyll -v kiểm tra version  jekyll build --destination _site_test build ra file html test  jekyll serve --livereload chạy live testChúc bạn vui khi dựng blog! Nếu cần, mình có thể giúp tối ưu giao diện hoặc viết mẫu bài đăng đẹp hơn.",
+      "image": "/assets/img/blog/image.png",
+      "thumbnail": "/assets/img/blog/image.png",
+      "categories": ["blog"],
+      "tags": ["github","jekyll"]
+    }
+  
+  ]
+}

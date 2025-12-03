@@ -1,0 +1,38 @@
+{
+ 
+  "author": {
+    "title": "Về tác giả",
+    "name": "Tên",
+    "bio": "Tiểu sử ngắn sẽ hiển thị ở đây.",
+    "contact": "Liên hệ"
+  },
+  "featured": {
+    "title": "Bài viết nổi bật",
+    "read_more": "Xem thêm"
+  },
+  "site": {
+    "title": "Đoàn Ngọc Thành Blog",
+    "description": "Một blog Jekyll đơn giản đồng thời xuất dữ liệu JSON cho API"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "api": "API JSON",
+    "post": "Bài"
+  },
+  "home": {
+    "posts": "Bài viết",
+    "trending": "Xu hướng",
+    "no_posts": "Chưa có bài viết nào",
+    "recent": "Bài viết gần đây"
+  },
+  "footer": {
+    "useful": "Liên kết hữu ích",
+    "services": "Dịch vụ của chúng tôi",
+    "extra": "Thêm",
+    "contact": "Liên hệ",
+    "copyright": "Bản quyền",
+    "all_rights": "Mọi quyền được bảo lưu",
+    "designed": "Thiết kế bởi BootstrapMade"
+  }
+}

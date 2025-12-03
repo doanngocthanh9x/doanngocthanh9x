@@ -7,6 +7,8 @@ description: >
 # For example: url: "https://doanngocthanh9x.github.io" and baseurl: "/doanngocthanh9x"
 baseurl: "/doanngocthanh9x"
 url: "https://doanngocthanh9x.github.io"
+# baseurl: "" # nếu dùng GitHub Pages dưới user.github.io thì để trống
+# url: "http://localhost:4000"
 markdown: kramdown
 permalink: /:categories/:year/:month/:day/:title/
 
