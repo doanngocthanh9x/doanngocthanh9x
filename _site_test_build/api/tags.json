@@ -1,4 +1,5 @@
 {
+  "site_base_url": "https://doanngocthanh9x.github.io/doanngocthanh9x/",
   "tags": {
   
     "github": [
@@ -55,8 +56,8 @@
           "url": "https://doanngocthanh9x.github.io/doanngocthanh9x/blog/2025/12/02/bai-viet-dau-tien/",
           "date": "2025-12-02T05:00:00+00:00",
           "excerpt": "Bài viết đầu tiên — Chào mừng đến với blog!",
-          "image": "/assets/img/blog/image.png",
-          "thumbnail": "/assets/img/blog/image.png",
+          "image": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/blog/image.png",
+          "thumbnail": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/blog/image.png",
           "categories": ["blog"],
           "tags": ["github","jekyll"]
         }
@@ -72,8 +73,8 @@
           "url": "https://doanngocthanh9x.github.io/doanngocthanh9x/blog/2025/12/02/bai-viet-dau-tien/",
           "date": "2025-12-02T05:00:00+00:00",
           "excerpt": "Bài viết đầu tiên — Chào mừng đến với blog!",
-          "image": "/assets/img/blog/image.png",
-          "thumbnail": "/assets/img/blog/image.png",
+          "image": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/blog/image.png",
+          "thumbnail": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/blog/image.png",
           "categories": ["blog"],
           "tags": ["github","jekyll"]
         }
@@ -89,8 +90,8 @@
           "url": "https://doanngocthanh9x.github.io/doanngocthanh9x/blog/2025/12/03/bai-co-anh/",
           "date": "2025-12-03T03:00:00+00:00",
           "excerpt": "Đây là bài viết thử để kiểm tra việc chèn ảnh trong bài.",
-          "image": "/assets/img/post-landscape-3.jpg",
-          "thumbnail": "/assets/img/post-landscape-3.jpg",
+          "image": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/post-landscape-3.jpg",
+          "thumbnail": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/post-landscape-3.jpg",
           "categories": ["blog"],
           "tags": ["ảnh","ví-dụ"]
         }
@@ -106,8 +107,8 @@
           "url": "https://doanngocthanh9x.github.io/doanngocthanh9x/blog/2025/12/03/bai-co-anh/",
           "date": "2025-12-03T03:00:00+00:00",
           "excerpt": "Đây là bài viết thử để kiểm tra việc chèn ảnh trong bài.",
-          "image": "/assets/img/post-landscape-3.jpg",
-          "thumbnail": "/assets/img/post-landscape-3.jpg",
+          "image": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/post-landscape-3.jpg",
+          "thumbnail": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/post-landscape-3.jpg",
           "categories": ["blog"],
           "tags": ["ảnh","ví-dụ"]
         }

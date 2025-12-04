@@ -1,4 +1,5 @@
 {
+  "site_base_url": {{ '/' | absolute_url | jsonify }},
   "tags": {
   {% for tag in site.tags %}
     "{{ tag[0] | escape }}": [
@@ -25,8 +26,8 @@
           "url": {{ post.url | absolute_url | jsonify }},
           "date": {{ post.date | date_to_xmlschema | jsonify }},
           "excerpt": {{ post.excerpt | strip_html | strip_newlines | jsonify }},
-          "image": {{ post.image | default: "" | jsonify }},
-          "thumbnail": {{ post.thumbnail | default: post.image | default: "" | jsonify }},
+          "image": {% if post.image %}{{ post.image | absolute_url | jsonify }}{% else %}{{ "" | jsonify }}{% endif %},
+          "thumbnail": {% if post.thumbnail %}{{ post.thumbnail | absolute_url | jsonify }}{% elsif post.image %}{{ post.image | absolute_url | jsonify }}{% else %}{{ "" | jsonify }}{% endif %},
           "categories": {{ post.categories | jsonify }},
           "tags": {{ post.tags | jsonify }}
         }{% if forloop.last == false %},{% endif %}

@@ -1,4 +1,5 @@
 {
+  "site_base_url": {{ '/' | absolute_url | jsonify }},
   "posts": [
   {% assign all_posts = site.posts | sort: 'date' | reverse %}
   {% if page.page_number and page.page_size %}
@@ -13,19 +14,29 @@
   {% endif %}
 
   {% for post in posts %}
+    {% comment %} prepare an absolute base without trailing slash for URL rewriting {% endcomment %}
+    {% assign abs_base = '/' | absolute_url | slice: 0, -1 %}
+    {% assign content_html = post.content | markdownify %}
+  {% assign _search1 = '="/assets' %}
+  {% assign _replace1 = '="' | append: abs_base | append: '/assets' %}
+  {% assign content_html_absolute = content_html | replace: _search1, _replace1 %}
+  {% assign _search2 = "='/assets" %}
+  {% assign _replace2 = "='" | append: abs_base | append: '/assets' %}
+  {% assign content_html_absolute = content_html_absolute | replace: _search2, _replace2 %}
     {
       "title": {{ post.title | jsonify }},
       "url": {{ post.url | absolute_url | jsonify }},
       "date": {{ post.date | date_to_xmlschema | jsonify }},
       "excerpt": {{ post.excerpt | strip_html | strip_newlines | jsonify }},
       "content_markdown": {{ post.content | jsonify }},
-      "content_html": {{ post.content | markdownify | jsonify }},
-      "content_format": "markdown",
-      "image": {{ post.image | default: "" | jsonify }},
-      "thumbnail": {{ post.thumbnail | default: post.image | default: "" | jsonify }},
-      "meta_title": {{ post.data.meta_title | default: post.title | jsonify }},
-      "meta_description": {{ post.data.meta_description | default: post.excerpt | strip_html | strip_newlines | jsonify }},
-      "og_image": {{ post.data.og_image | default: post.image | default: "" | jsonify }},
+  "content_html": {{ content_html | jsonify }},
+  "content_html_absolute": {{ content_html_absolute | jsonify }},
+  "content_format": "markdown",
+  "image": {% if post.image %}{{ post.image | absolute_url | jsonify }}{% else %}{{ "" | jsonify }}{% endif %},
+  "thumbnail": {% if post.thumbnail %}{{ post.thumbnail | absolute_url | jsonify }}{% elsif post.image %}{{ post.image | absolute_url | jsonify }}{% else %}{{ "" | jsonify }}{% endif %},
+  "meta_title": {{ post.data.meta_title | default: post.title | jsonify }},
+  "meta_description": {{ post.data.meta_description | default: post.excerpt | strip_html | strip_newlines | jsonify }},
+  "og_image": {% if post.data.og_image %}{{ post.data.og_image | absolute_url | jsonify }}{% elsif post.image %}{{ post.image | absolute_url | jsonify }}{% else %}{{ "" | jsonify }}{% endif %},
       "canonical_url": {{ post.url | absolute_url | jsonify }},
       "categories": {{ post.categories | jsonify }},
       "tags": {{ post.tags | jsonify }}

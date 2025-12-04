@@ -1,8 +1,18 @@
 {
+  "site_base_url": "https://doanngocthanh9x.github.io/doanngocthanh9x/",
   "posts": [
   
   
 
+  
+    
+    
+    
+  
+  
+  
+  
+  
   
     {
       "title": "Bài thử chèn ảnh",
@@ -10,17 +20,27 @@
       "date": "2025-12-03T03:00:00+00:00",
       "excerpt": "Đây là bài viết thử để kiểm tra việc chèn ảnh trong bài.",
       "content_markdown": "<p>Đây là bài viết thử để kiểm tra việc chèn ảnh trong bài.\n<!--more--></p>\n\n<p>Phần nội dung tiếp theo để kiểm tra hiển thị của layout và ảnh.</p>\n\n<p>Ảnh ở đầu bài sẽ hiển thị vì chúng ta đã thêm <code class=\"language-plaintext highlighter-rouge\">image</code> trong front matter.</p>\n\n<p>Bạn cũng có thể chèn ảnh trực tiếp trong nội dung:</p>\n\n<p><img src=\"/assets/img/post-landscape-1.jpg\" alt=\"Ảnh minh họa\" /></p>\n",
-      "content_html": "<p>Đây là bài viết thử để kiểm tra việc chèn ảnh trong bài.\n<!--more--></p>\n\n<p>Phần nội dung tiếp theo để kiểm tra hiển thị của layout và ảnh.</p>\n\n<p>Ảnh ở đầu bài sẽ hiển thị vì chúng ta đã thêm <code class=\"language-plaintext highlighter-rouge\">image</code> trong front matter.</p>\n\n<p>Bạn cũng có thể chèn ảnh trực tiếp trong nội dung:</p>\n\n<p><img src=\"/assets/img/post-landscape-1.jpg\" alt=\"Ảnh minh họa\" /></p>\n",
-      "content_format": "markdown",
-      "image": "/assets/img/post-landscape-3.jpg",
-      "thumbnail": "/assets/img/post-landscape-3.jpg",
-      "meta_title": "Bài thử chèn ảnh",
-      "meta_description": "Đây là bài viết thử để kiểm tra việc chèn ảnh trong bài.",
-      "og_image": "/assets/img/post-landscape-3.jpg",
+  "content_html": "<p>Đây là bài viết thử để kiểm tra việc chèn ảnh trong bài.\n<!--more--></p>\n\n<p>Phần nội dung tiếp theo để kiểm tra hiển thị của layout và ảnh.</p>\n\n<p>Ảnh ở đầu bài sẽ hiển thị vì chúng ta đã thêm <code class=\"language-plaintext highlighter-rouge\">image</code> trong front matter.</p>\n\n<p>Bạn cũng có thể chèn ảnh trực tiếp trong nội dung:</p>\n\n<p><img src=\"/assets/img/post-landscape-1.jpg\" alt=\"Ảnh minh họa\" /></p>\n",
+  "content_html_absolute": "<p>Đây là bài viết thử để kiểm tra việc chèn ảnh trong bài.\n<!--more--></p>\n\n<p>Phần nội dung tiếp theo để kiểm tra hiển thị của layout và ảnh.</p>\n\n<p>Ảnh ở đầu bài sẽ hiển thị vì chúng ta đã thêm <code class=\"language-plaintext highlighter-rouge\">image</code> trong front matter.</p>\n\n<p>Bạn cũng có thể chèn ảnh trực tiếp trong nội dung:</p>\n\n<p><img src=\"/assets/img/post-landscape-1.jpg\" alt=\"Ảnh minh họa\" /></p>\n",
+  "content_format": "markdown",
+  "image": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/post-landscape-3.jpg",
+  "thumbnail": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/post-landscape-3.jpg",
+  "meta_title": "Bài thử chèn ảnh",
+  "meta_description": "Đây là bài viết thử để kiểm tra việc chèn ảnh trong bài.",
+  "og_image": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/post-landscape-3.jpg",
       "canonical_url": "https://doanngocthanh9x.github.io/doanngocthanh9x/blog/2025/12/03/bai-co-anh/",
       "categories": ["blog"],
       "tags": ["ảnh","ví-dụ"]
     },
+  
+    
+    
+    
+  
+  
+  
+  
+  
   
     {
       "title": "Blogs này được tạo hoàn toàn miễn phí và tốn công",
@@ -28,13 +48,14 @@
       "date": "2025-12-02T05:00:00+00:00",
       "excerpt": "Bài viết đầu tiên — Chào mừng đến với blog!",
       "content_markdown": "<p>Bài viết đầu tiên — Chào mừng đến với blog!\n<!--more--></p>\n\n<h1 id=\"giới-thiệu\">Giới thiệu</h1>\n\n<h2 id=\"jekyllrb\">jekyllrb</h2>\n<p>Mình dùng thư viện này để render giao diện nè\n https://jekyllrb.com/ dễ triển khai.</p>\n<ul>\n  <li>Tích hợp với git, tiện cho việc quản lý lịch sử và CI/CD đơn giản.</li>\n  <li>Hỗ trợ custom domain, HTTPS.</li>\n</ul>\n\n<h1 id=\"cách-mình-dùng\">Cách mình dùng</h1>\n<ol>\n  <li>Tạo repository (có thể đặt tên là username.github.io hoặc dùng branch gh-pages).</li>\n  <li>Viết bài ở thư mục _posts/ theo định dạng Jekyll.</li>\n  <li>Đặt ảnh, CSS, JS vào thư mục assets/ và tham chiếu bằng đường dẫn tương đối (/assets/…).</li>\n  <li>Push lên GitHub — GitHub Pages sẽ build và phục vụ site tự động.</li>\n</ol>\n\n<h1 id=\"jekyll--render-site-tĩnh\">Jekyll — render site tĩnh</h1>\n<p>Mình dùng Jekyll để render giao diện: https://jekyllrb.com/<br />\nCài nhanh trên Ubuntu:</p>\n<div class=\"language-bash highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code><span class=\"nb\">sudo </span>apt update\n<span class=\"nb\">sudo </span>apt\ngem <span class=\"nb\">install </span>jekyll bundler\n</code></pre></div></div>\n<p>Khởi tạo site mới:</p>\n<div class=\"language-bash highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>jekyll new myblog\n<span class=\"nb\">cd </span>myblog\nbundle <span class=\"nb\">exec </span>jekyll serve\n</code></pre></div></div>\n\n<h1 id=\"mẹo-nhỏ\">Mẹo nhỏ</h1>\n<ul>\n  <li>Dùng <code class=\"language-plaintext highlighter-rouge\">_config.yml</code> để cấu hình baseurl, title, author.</li>\n  <li>Đặt đoạn ngắn (excerpt) trước <code class=\"language-plaintext highlighter-rouge\">&lt;!--more--&gt;</code> để hiển thị tóm tắt.</li>\n  <li>Tối ưu ảnh (nén) để tải nhanh.</li>\n  <li>Kiểm tra local bằng <code class=\"language-plaintext highlighter-rouge\">bundle exec jekyll serve</code> trước khi push.</li>\n</ul>\n\n<h1 id=\"các-lệnh\">Các lệnh</h1>\n<ul>\n  <li><code class=\"language-plaintext highlighter-rouge\">jekyll -v</code> kiểm tra version</li>\n  <li><code class=\"language-plaintext highlighter-rouge\">jekyll build --destination _site_test</code> build ra file html test</li>\n  <li><code class=\"language-plaintext highlighter-rouge\">jekyll serve --livereload</code> chạy live test\nChúc bạn vui khi dựng blog! Nếu cần, mình có thể giúp tối ưu giao diện hoặc viết mẫu bài đăng đẹp hơn.</li>\n</ul>\n",
-      "content_html": "<p>Bài viết đầu tiên — Chào mừng đến với blog!\n<!--more--></p>\n\n<h1 id=\"giới-thiệu\">Giới thiệu</h1>\n\n<h2 id=\"jekyllrb\">jekyllrb</h2>\n<p>Mình dùng thư viện này để render giao diện nè\n https://jekyllrb.com/ dễ triển khai.</p>\n<ul>\n  <li>Tích hợp với git, tiện cho việc quản lý lịch sử và CI/CD đơn giản.</li>\n  <li>Hỗ trợ custom domain, HTTPS.</li>\n</ul>\n\n<h1 id=\"cách-mình-dùng\">Cách mình dùng</h1>\n<ol>\n  <li>Tạo repository (có thể đặt tên là username.github.io hoặc dùng branch gh-pages).</li>\n  <li>Viết bài ở thư mục _posts/ theo định dạng Jekyll.</li>\n  <li>Đặt ảnh, CSS, JS vào thư mục assets/ và tham chiếu bằng đường dẫn tương đối (/assets/…).</li>\n  <li>Push lên GitHub — GitHub Pages sẽ build và phục vụ site tự động.</li>\n</ol>\n\n<h1 id=\"jekyll--render-site-tĩnh\">Jekyll — render site tĩnh</h1>\n<p>Mình dùng Jekyll để render giao diện: https://jekyllrb.com/<br />\nCài nhanh trên Ubuntu:</p>\n<div class=\"language-bash highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code><span class=\"nb\">sudo </span>apt update\n<span class=\"nb\">sudo </span>apt\ngem <span class=\"nb\">install </span>jekyll bundler\n</code></pre></div></div>\n<p>Khởi tạo site mới:</p>\n<div class=\"language-bash highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>jekyll new myblog\n<span class=\"nb\">cd </span>myblog\nbundle <span class=\"nb\">exec </span>jekyll serve\n</code></pre></div></div>\n\n<h1 id=\"mẹo-nhỏ\">Mẹo nhỏ</h1>\n<ul>\n  <li>Dùng <code class=\"language-plaintext highlighter-rouge\">_config.yml</code> để cấu hình baseurl, title, author.</li>\n  <li>Đặt đoạn ngắn (excerpt) trước <code class=\"language-plaintext highlighter-rouge\">&lt;!--more--&gt;</code> để hiển thị tóm tắt.</li>\n  <li>Tối ưu ảnh (nén) để tải nhanh.</li>\n  <li>Kiểm tra local bằng <code class=\"language-plaintext highlighter-rouge\">bundle exec jekyll serve</code> trước khi push.</li>\n</ul>\n\n<h1 id=\"các-lệnh\">Các lệnh</h1>\n<ul>\n  <li><code class=\"language-plaintext highlighter-rouge\">jekyll -v</code> kiểm tra version</li>\n  <li><code class=\"language-plaintext highlighter-rouge\">jekyll build --destination _site_test</code> build ra file html test</li>\n  <li><code class=\"language-plaintext highlighter-rouge\">jekyll serve --livereload</code> chạy live test\nChúc bạn vui khi dựng blog! Nếu cần, mình có thể giúp tối ưu giao diện hoặc viết mẫu bài đăng đẹp hơn.</li>\n</ul>\n",
-      "content_format": "markdown",
-      "image": "/assets/img/blog/image.png",
-      "thumbnail": "/assets/img/blog/image.png",
-      "meta_title": "Blogs này được tạo hoàn toàn miễn phí và tốn công",
-      "meta_description": "Bài viết đầu tiên — Chào mừng đến với blog!",
-      "og_image": "/assets/img/blog/image.png",
+  "content_html": "<p>Bài viết đầu tiên — Chào mừng đến với blog!\n<!--more--></p>\n\n<h1 id=\"giới-thiệu\">Giới thiệu</h1>\n\n<h2 id=\"jekyllrb\">jekyllrb</h2>\n<p>Mình dùng thư viện này để render giao diện nè\n https://jekyllrb.com/ dễ triển khai.</p>\n<ul>\n  <li>Tích hợp với git, tiện cho việc quản lý lịch sử và CI/CD đơn giản.</li>\n  <li>Hỗ trợ custom domain, HTTPS.</li>\n</ul>\n\n<h1 id=\"cách-mình-dùng\">Cách mình dùng</h1>\n<ol>\n  <li>Tạo repository (có thể đặt tên là username.github.io hoặc dùng branch gh-pages).</li>\n  <li>Viết bài ở thư mục _posts/ theo định dạng Jekyll.</li>\n  <li>Đặt ảnh, CSS, JS vào thư mục assets/ và tham chiếu bằng đường dẫn tương đối (/assets/…).</li>\n  <li>Push lên GitHub — GitHub Pages sẽ build và phục vụ site tự động.</li>\n</ol>\n\n<h1 id=\"jekyll--render-site-tĩnh\">Jekyll — render site tĩnh</h1>\n<p>Mình dùng Jekyll để render giao diện: https://jekyllrb.com/<br />\nCài nhanh trên Ubuntu:</p>\n<div class=\"language-bash highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code><span class=\"nb\">sudo </span>apt update\n<span class=\"nb\">sudo </span>apt\ngem <span class=\"nb\">install </span>jekyll bundler\n</code></pre></div></div>\n<p>Khởi tạo site mới:</p>\n<div class=\"language-bash highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>jekyll new myblog\n<span class=\"nb\">cd </span>myblog\nbundle <span class=\"nb\">exec </span>jekyll serve\n</code></pre></div></div>\n\n<h1 id=\"mẹo-nhỏ\">Mẹo nhỏ</h1>\n<ul>\n  <li>Dùng <code class=\"language-plaintext highlighter-rouge\">_config.yml</code> để cấu hình baseurl, title, author.</li>\n  <li>Đặt đoạn ngắn (excerpt) trước <code class=\"language-plaintext highlighter-rouge\">&lt;!--more--&gt;</code> để hiển thị tóm tắt.</li>\n  <li>Tối ưu ảnh (nén) để tải nhanh.</li>\n  <li>Kiểm tra local bằng <code class=\"language-plaintext highlighter-rouge\">bundle exec jekyll serve</code> trước khi push.</li>\n</ul>\n\n<h1 id=\"các-lệnh\">Các lệnh</h1>\n<ul>\n  <li><code class=\"language-plaintext highlighter-rouge\">jekyll -v</code> kiểm tra version</li>\n  <li><code class=\"language-plaintext highlighter-rouge\">jekyll build --destination _site_test</code> build ra file html test</li>\n  <li><code class=\"language-plaintext highlighter-rouge\">jekyll serve --livereload</code> chạy live test\nChúc bạn vui khi dựng blog! Nếu cần, mình có thể giúp tối ưu giao diện hoặc viết mẫu bài đăng đẹp hơn.</li>\n</ul>\n",
+  "content_html_absolute": "<p>Bài viết đầu tiên — Chào mừng đến với blog!\n<!--more--></p>\n\n<h1 id=\"giới-thiệu\">Giới thiệu</h1>\n\n<h2 id=\"jekyllrb\">jekyllrb</h2>\n<p>Mình dùng thư viện này để render giao diện nè\n https://jekyllrb.com/ dễ triển khai.</p>\n<ul>\n  <li>Tích hợp với git, tiện cho việc quản lý lịch sử và CI/CD đơn giản.</li>\n  <li>Hỗ trợ custom domain, HTTPS.</li>\n</ul>\n\n<h1 id=\"cách-mình-dùng\">Cách mình dùng</h1>\n<ol>\n  <li>Tạo repository (có thể đặt tên là username.github.io hoặc dùng branch gh-pages).</li>\n  <li>Viết bài ở thư mục _posts/ theo định dạng Jekyll.</li>\n  <li>Đặt ảnh, CSS, JS vào thư mục assets/ và tham chiếu bằng đường dẫn tương đối (/assets/…).</li>\n  <li>Push lên GitHub — GitHub Pages sẽ build và phục vụ site tự động.</li>\n</ol>\n\n<h1 id=\"jekyll--render-site-tĩnh\">Jekyll — render site tĩnh</h1>\n<p>Mình dùng Jekyll để render giao diện: https://jekyllrb.com/<br />\nCài nhanh trên Ubuntu:</p>\n<div class=\"language-bash highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code><span class=\"nb\">sudo </span>apt update\n<span class=\"nb\">sudo </span>apt\ngem <span class=\"nb\">install </span>jekyll bundler\n</code></pre></div></div>\n<p>Khởi tạo site mới:</p>\n<div class=\"language-bash highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>jekyll new myblog\n<span class=\"nb\">cd </span>myblog\nbundle <span class=\"nb\">exec </span>jekyll serve\n</code></pre></div></div>\n\n<h1 id=\"mẹo-nhỏ\">Mẹo nhỏ</h1>\n<ul>\n  <li>Dùng <code class=\"language-plaintext highlighter-rouge\">_config.yml</code> để cấu hình baseurl, title, author.</li>\n  <li>Đặt đoạn ngắn (excerpt) trước <code class=\"language-plaintext highlighter-rouge\">&lt;!--more--&gt;</code> để hiển thị tóm tắt.</li>\n  <li>Tối ưu ảnh (nén) để tải nhanh.</li>\n  <li>Kiểm tra local bằng <code class=\"language-plaintext highlighter-rouge\">bundle exec jekyll serve</code> trước khi push.</li>\n</ul>\n\n<h1 id=\"các-lệnh\">Các lệnh</h1>\n<ul>\n  <li><code class=\"language-plaintext highlighter-rouge\">jekyll -v</code> kiểm tra version</li>\n  <li><code class=\"language-plaintext highlighter-rouge\">jekyll build --destination _site_test</code> build ra file html test</li>\n  <li><code class=\"language-plaintext highlighter-rouge\">jekyll serve --livereload</code> chạy live test\nChúc bạn vui khi dựng blog! Nếu cần, mình có thể giúp tối ưu giao diện hoặc viết mẫu bài đăng đẹp hơn.</li>\n</ul>\n",
+  "content_format": "markdown",
+  "image": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/blog/image.png",
+  "thumbnail": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/blog/image.png",
+  "meta_title": "Blogs này được tạo hoàn toàn miễn phí và tốn công",
+  "meta_description": "Bài viết đầu tiên — Chào mừng đến với blog!",
+  "og_image": "https://doanngocthanh9x.github.io/doanngocthanh9x/assets/img/blog/image.png",
       "canonical_url": "https://doanngocthanh9x.github.io/doanngocthanh9x/blog/2025/12/02/bai-viet-dau-tien/",
       "categories": ["blog"],
       "tags": ["github","jekyll"]
