@@ -3,6 +3,12 @@
    - renders results into #search-results
 */
 (function () {
+  function sitePath(path){
+    const base = (window.SITE_BASEURL || '').replace(/\/$/, '');
+    if (!path.startsWith('/')) path = '/' + path;
+    return (base ? base + path : path);
+  }
+
   async function fetchJSON(url) {
     try {
       const res = await fetch(url);
@@ -17,8 +23,8 @@
   function normalize(s){ return (s||'').toString().toLowerCase(); }
 
   async function initSearch() {
-    const postsResp = await fetchJSON('/api/posts.json');
-    const tagsResp = await fetchJSON('/api/tags.json');
+  const postsResp = await fetchJSON(sitePath('/api/posts.json'));
+  const tagsResp = await fetchJSON(sitePath('/api/tags.json'));
     const posts = (postsResp && postsResp.posts) || [];
 
     const queryInput = document.getElementById('search-query');
@@ -27,9 +33,15 @@
 
     // populate tag select
     if (tagSelect && tagsResp && tagsResp.tags) {
+      // tagsResp.tags may be an object mapping tag->posts or an array; normalize to object
+      let tagsMap = tagsResp.tags;
+      if (Array.isArray(tagsResp.tags)) {
+        tagsMap = {};
+        tagsResp.tags.forEach(item => { if (item.tag) tagsMap[item.tag] = (item.posts || []).map(p=>p.title || ''); });
+      }
       // empty option
       const emptyOpt = document.createElement('option'); emptyOpt.value=''; emptyOpt.textContent='--'; tagSelect.appendChild(emptyOpt);
-      Object.keys(tagsResp.tags).sort().forEach(t => {
+      Object.keys(tagsMap).sort().forEach(t => {
         const opt = document.createElement('option'); opt.value = t; opt.textContent = t; tagSelect.appendChild(opt);
       });
     }

@@ -1,0 +1,32 @@
+name: Increment post read count
+
+on:
+  repository_dispatch:
+    types: [increment-read]
+
+jobs:
+  increment:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Read current stats
+        id: read
+        run: |
+          echo "Stats file contents:"; cat _data/stats.json || echo '{}' ;
+
+      - name: Increment counter
+        shell: bash
+        run: |
+          SLUG="${{ github.event.client_payload.slug }}"
+          if [ -z "$SLUG" ]; then echo "No slug provided"; exit 1; fi
+          TMP=$(mktemp)
+          jq --arg slug "$SLUG" '.posts[$slug] = ((.posts[$slug] // 0) + 1)' _data/stats.json > $TMP || jq '{posts: {}} + (.posts // {}) | .posts' _data/stats.json > $TMP
+          mv $TMP _data/stats.json
+          git add _data/stats.json
+          git commit -m "Increment read count for $SLUG" || echo "No changes"
+          git push origin HEAD:main

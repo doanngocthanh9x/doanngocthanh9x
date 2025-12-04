@@ -21,9 +21,15 @@
           "url": {{ post.url | absolute_url | jsonify }},
           "date": {{ post.date | date_to_xmlschema | jsonify }},
           "excerpt": {{ post.excerpt | strip_html | strip_newlines | jsonify }},
-          "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+          "content_markdown": {{ post.content | jsonify }},
+          "content_html": {{ post.content | markdownify | jsonify }},
+          "content_format": "markdown",
           "image": {{ post.image | default: "" | jsonify }},
           "thumbnail": {{ post.thumbnail | default: post.image | default: "" | jsonify }},
+          "meta_title": {{ post.data.meta_title | default: post.title | jsonify }},
+          "meta_description": {{ post.data.meta_description | default: post.excerpt | strip_html | strip_newlines | jsonify }},
+          "og_image": {{ post.data.og_image | default: post.image | default: "" | jsonify }},
+          "canonical_url": {{ post.url | absolute_url | jsonify }},
           "categories": {{ post.categories | jsonify }},
           "tags": {{ post.tags | jsonify }}
         }{% if forloop.last == false %},{% endif %}

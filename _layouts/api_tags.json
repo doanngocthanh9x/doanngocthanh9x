@@ -1,5 +1,20 @@
 {
   "tags": {
+  {% for tag in site.tags %}
+    "{{ tag[0] | escape }}": [
+      {% for p in tag[1] %}
+      {
+        "title": {{ p.title | jsonify }},
+        "url": {{ p.url | absolute_url | jsonify }},
+        "date": {{ p.date | date_to_xmlschema | jsonify }}
+      }{% if forloop.last == false %},{% endif %}
+      {% endfor %}
+    ]{% if forloop.last == false %},{% endif %}
+  {% endfor %}
+  }
+}
+{
+  "tags": {
   {% for tag_pair in site.tags %}
     {% assign tag_name = tag_pair[0] %}
     {% assign tag_posts = tag_pair[1] | sort: 'date' | reverse %}

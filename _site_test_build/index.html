@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Trang chủ</title>
+    <title>API Index</title>
     <meta name="description" content="Hello world! Đây là blog cá nhân của tôi.
 ">
 
@@ -68,77 +68,23 @@
     </header>
 
     <main class="main container">
-      <!-- Main posts listing using ZenBlog markup -->
-<section class="trending-category section mt-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        
-          
-          <div class="d-lg-flex post-entry mb-4">
-            <a href="/doanngocthanh9x/blog/2025/12/03/bai-co-anh/" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-              
-                <img src="/doanngocthanh9x/assets/img/post-landscape-3.jpg" alt="Bài thử chèn ảnh" class="img-fluid" />
-              
-            </a>
-            <div>
-              <div class="post-meta"><span class="date">blog</span> <span class="mx-1">•</span> <span>Dec  3, 2025</span></div>
-              <h3><a href="/doanngocthanh9x/blog/2025/12/03/bai-co-anh/">Bài thử chèn ảnh</a></h3>
-              <p class="mb-4 d-block">Đây là bài viết thử để kiểm tra việc chèn ảnh trong bài.</p>
-              <div class="d-flex align-items-center author">
-                <div class="photo"><img src="/doanngocthanh9x/assets/img/person-1.jpg" alt="" class="img-fluid" /></div>
-                <div class="name"><h3 class="m-0 p-0">dnt.doanngocthanh@gmail.com</h3></div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="d-lg-flex post-entry mb-4">
-            <a href="/doanngocthanh9x/blog/2025/12/02/bai-viet-dau-tien/" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-              
-                <img src="/doanngocthanh9x/assets/img/blog/image.png" alt="Blogs này được tạo hoàn toàn miễn phí và tốn công" class="img-fluid" />
-              
-            </a>
-            <div>
-              <div class="post-meta"><span class="date">blog</span> <span class="mx-1">•</span> <span>Dec  2, 2025</span></div>
-              <h3><a href="/doanngocthanh9x/blog/2025/12/02/bai-viet-dau-tien/">Blogs này được tạo hoàn toàn miễn phí và tốn công</a></h3>
-              <p class="mb-4 d-block">Bài viết đầu tiên — Chào mừng đến với blog!</p>
-              <div class="d-flex align-items-center author">
-                <div class="photo"><img src="/doanngocthanh9x/assets/img/person-1.jpg" alt="" class="img-fluid" /></div>
-                <div class="name"><h3 class="m-0 p-0">dnt.doanngocthanh@gmail.com</h3></div>
-              </div>
-            </div>
-          </div>
-          
-        
-      </div>
-      <div class="col-md-3">
-        <!-- Sidebar: Trending -->
-        <div class="trending">
-          <h3 data-i18n="home.trending">Trending</h3>
-          <ul class="trending-post">
-            
-            <li>
-              <a href="/doanngocthanh9x/blog/2025/12/03/bai-co-anh/">
-                <span class="number">1</span>
-                <h3>Bài thử chèn ảnh</h3>
-                <span class="author">dnt.doanngocthanh@gmail.com</span>
-              </a>
-            </li>
-            
-            <li>
-              <a href="/doanngocthanh9x/blog/2025/12/02/bai-viet-dau-tien/">
-                <span class="number">2</span>
-                <h3>Blogs này được tạo hoàn toàn miễn phí và tốn công</h3>
-                <span class="author">dnt.doanngocthanh@gmail.com</span>
-              </a>
-            </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      <h2 id="api-endpoints">API Endpoints</h2>
+
+<p>The site provides JSON endpoints for posts, tags and reading statistics.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/api/posts.json</code> — all posts (supports limit/offset via front-matter when used as a page)</li>
+  <li><code class="language-plaintext highlighter-rouge">/api/latest.json</code> — latest posts (5)</li>
+  <li><code class="language-plaintext highlighter-rouge">/api/posts/pages.json</code> — paginated pages JSON (pages array)</li>
+  <li><code class="language-plaintext highlighter-rouge">/api/tags.json</code> — tags mapping to posts</li>
+  <li><code class="language-plaintext highlighter-rouge">/api/stats.json</code> — reading statistics for posts</li>
+  <li><code class="language-plaintext highlighter-rouge">/api/posts/&lt;year&gt;/&lt;month&gt;/&lt;day&gt;/&lt;slug&gt;/</code> — (use post URLs plus <code class="language-plaintext highlighter-rouge">.json</code> if available per-post)</li>
+</ul>
+
+<p>To increment a post read counter programmatically, trigger the repository_dispatch event <code class="language-plaintext highlighter-rouge">increment-read</code> (see README or Actions tab). This increments the value in <code class="language-plaintext highlighter-rouge">_data/stats.json</code> and the change is committed to the repo.</p>
+
+<p>If you want a per-post detail JSON generated automatically, tell me and I’ll add per-post API files or an endpoint pattern.
+            &lt;/a&gt;</p>
 
     </main>
 
